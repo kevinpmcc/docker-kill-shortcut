@@ -1,0 +1,5 @@
+dk() {
+  IMAGE=$(docker ps | grep '[a-z0-9]' | grep -m 1 '^\w'  )
+  echo `docker kill ${IMAGE%% *}`
+  echo 'docker container above is now dead'
+}
